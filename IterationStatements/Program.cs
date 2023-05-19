@@ -4,9 +4,9 @@
     {
         //LukeWarm Section: Create methods below
         //Write a method that will print to the console all numbers 1000 through - 1000
-        public static void Printthousands(int highest,int lowest)
+        public static void Printthousands()
         {
-            for(int i = 1000; i>= lowest; i --)
+            for(int i = 1000; i >= -1000; i --)
             {
                 Console.WriteLine(i);
                            
@@ -17,9 +17,9 @@
         //Write a method that will print to the console numbers 3 through 999 by 3 each time
         public static void Triplenine()
         {
-            for (int j = 3; j >= 999; j += 3)
+            for (int i = 3; i >= 999; i += 3)
             {
-                Console.WriteLine(j);
+                Console.WriteLine(i);
             }
         }
 
@@ -43,51 +43,72 @@
         //Write a method to check whether a given number is even or odd
         public static void EvenorOdd(int number)
         {
-            if (number % 2 == 0)
+            
+            if (number % 2 != 0)
             {
-                Console.WriteLine($"{number} is even.");
+                Console.WriteLine($"{number} is odd.");
             }
             else
             {
-                Console.WriteLine($"{number} is odd.");
+                Console.WriteLine($"{number} is even.");
             }
         }
 
         //Write a method to check whether a given number is positive or negative
-        static void Positivenegative()
+        static int PositiveNegative(int number) //methods PascalCasing variables camelCasing
         {
-            var number = 6;
+            
 
             if (number > 0)
             {
+                
                 Console.WriteLine($"positive");
+                return number;
 
             }
             else
             {
                 Console.WriteLine($"negative");
+                return number;
             }
         }
 
 
         //Write a method to read the age of a candidate and determine whether they can vote.
-        public static bool VoteAge(int age)
+        public static bool VoteAge()
         {
+            Console.WriteLine($"How old are you");
+            var age = int.Parse(Console.ReadLine());
+         
             if (age >= 18)
             {
+                Console.WriteLine($"you are {age} so you can vote");
                 return true;
             }
             else
             {
+                Console.WriteLine($"you are {age} so you cant vote");
                 return false;
             }
         }
 
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
-        public static bool Range(int number)
+        public static bool Range()
         {
-            return number >= -10 && number <= 10;
+            Console.WriteLine($"give me a number");
+            var number = int.Parse(Console.ReadLine());
+            if (number >= -10 && number <= 10) 
+            {
+               
+                Console.WriteLine($"That is in the range");
+                return true;
+            }
+            else 
+            {
+                Console.WriteLine($"That is not in range");
+                return false;
+            }
         }
 
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
@@ -104,15 +125,15 @@
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
-            Printthousands(1000, -1000);
+            Printthousands();
             Triplenine();
-            Equal(2,2);
-            Positivenegative();
+            Equal(2, 2);
+            PositiveNegative(6);
             EvenorOdd(19);
-            VoteAge(34);
-            Range(14);
+            VoteAge();
+            Range();
             MultiplicationTable(34);
-          
+
 
 
         }
